@@ -1,0 +1,89 @@
+doctype html
+head
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/stylesheets/style.css')
+  script(src='/javascripts/jquery-3.4.1.js')
+  script(src='/javascripts/javascript.js')
+// signup
+
+
+
+.fixed-signup(style='display:none;')
+  img#cancelsignup(src='/images/cancel.png')
+  .error-show(style="display:none;")
+  .row-signup
+    form#clear-form1
+      .col-6a
+        input#signupemail(type='text' name='semail' placeholder='Email')
+        br
+        input#signupname(type='text' name='sname' placeholder='Username')
+        br
+        input#signuppassword(type='text' name='spass' placeholder='Password')
+        br
+        input#signupcollegeid(type='text' name='scollegeid' placeholder='College ID')
+        select#gender.styleselect(value='Gender')
+          option(value='MALE') Male
+          option(value='FEMALE') Female
+      .col-6b
+        input#signupaddress(type='text' name='saddress' placeholder='Address')
+        br
+        p(style='font-size:20px;font-family:Comic Sans MS;display:inline-block;margin-left:25px;color:white;opacity:0.5;') Course
+        select#course.styleselect(value='Gender' style='margin-top:70px;margin-left:4px;width:150px;')
+          option(value='BCA') BCA
+          option(value='MCA') MCA
+          option(value='BTECH') Btech
+        p(style='font-size:20px;font-family:Comic Sans MS;display:inline-block;margin-left:30px;color:white;opacity:0.5;') Semester
+        select#semester.styleselect(value='Gender' style='margin-top:70px;margin-left:4px;width:150px;')
+          option(value='1') First
+          option(value='2') Second
+          option(value='3') Third
+          option(value='4') Fourth
+          option(value='5') Fifth
+          option(value='6') Sixith
+        br
+        input#signupcollegename(type='text' name='scollegename' placeholder="Institute's Name" style='margin-top:10px;')
+        br
+        input#submitlsignup(type='button' value='Submit' style='margin-top:50px;')
+  br
+  br
+// login in
+.fixed-login(style='display:none;')
+  img#cancellogin(src='/images/cancel.png')
+  form
+    .avatar
+      img(src='/images/login.png')
+    input#uname(type='text' name='username' placeholder='Username')
+    br
+    input#upass(type='password' name='password' placeholder='Password')
+    br
+    input#submitlogin(type='button' value='Submit')
+    br
+    p(style='margin-left:170px;font-size:17px;color:white;margin-bottom:30px;font-family: Comic Sans MS;') forgot your username or password?
+ul.header
+  li(style='float:left;font-size:28px;text-align:center;margin-top:25px;font-family: Comic Sans MS;') Share Notes
+  li
+    a(href='#') ABOUT ME
+  li
+  li
+    a#loginpopup(href='#') LOGIN
+  li
+  li
+    a#signuppopup(href='#') SIGN UP
+  li
+.col-12.menu
+  .abs
+    img#prev(src='/images/prev_a.png')
+    img#next(src='/images/next_a.png')
+    .container
+      div(style='display: inline-block;')
+        img(src='/images/1.jpeg')
+      div
+        img(src='/images/2.jpeg')
+      div
+        img(src='/images/3.jpeg')
+      div
+        img(src='/images/4.png')
+      div
+        img(src='/images/5.jpeg')
+      div
+        img(src='/images/6.jpeg')
