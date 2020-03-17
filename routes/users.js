@@ -1,20 +1,19 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const Users  = require('../models/users'); 
+const {Users}  = require('../models/users'); 
 /* GET users listing. */
-router.get('/',async(req,res)=>{
-  let result = await Users.Users.find();
-  console.log(result);
-});
 
-router.get('/check_email',(req,res)=>{
- // res.render(error);
-console.log(Users);
+
+router.post('/check_email',async(req,res)=>{
+ const result = await Users.find({email:req.body.email}).countDocuments();
+ res.send(''+result);
+
+ 
 });
 
 router.post('/create_account',async (req,res)=>{
-         const newuser = new Users.Users({
+         const newuser = new  Users({
            name : req.body.username,
            email : req.body.email,
            password: req.body.password,
@@ -26,8 +25,14 @@ router.post('/create_account',async (req,res)=>{
            college_name: req.body.college_name
          });
 
-         const result = await newuser.save();
-         console.log(result);
+         const result = await newuser.save((err)=>{
+           if(err) {
+             res.send("error");
+           }else{
+             res.send("ok");
+           }
+         });
+        
 });
 
 
